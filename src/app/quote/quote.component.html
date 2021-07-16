@@ -6,17 +6,14 @@
     <div class="add-quote-section">
       <app-quote-form></app-quote-form>
     </div>
-    <div class="quote-detail-section">
+    <div class="quote-detail-section" *ngFor="let quote of quotes; let i = index">
       <div class="header">
-        <p>Jane Doe Kimani</p>
+        <p>{{ quote.authorName }}</p>
         <p><span>xdays</span></p>
       </div>
       <hr />
       <div class="detail">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id impedit
-          maxime, temporibus libero sequi excepturi, quisquam iusto perferendis
-          autem fugiat necessitatibus nisi odio nostrum? Perferendis.
+        <p>{{ quote.quote }}
         </p>
       </div>
       <hr />
