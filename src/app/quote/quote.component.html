@@ -1,25 +1,37 @@
 <div class="container">
   <div class="main-wrapper">
     <div class="form-group">
-      <button (click)="toggleDisplayQuoteForm()" type="button" class="btn-submit btn-info">Add quote</button>
+      <button
+        (click)="toggleDisplayQuoteForm()"
+        type="button"
+        class="btn-submit btn-info"
+      >
+        Add quote
+      </button>
     </div>
     <div *ngIf="hideAddQuoteForm" class="add-quote-section">
-      <app-quote-form (addQuote) = "addNewQuote($event)"></app-quote-form>
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
-    <div class="quote-detail-section" *ngFor="let quote of quotes; let i = index">
+    <div
+      class="quote-detail-section"
+      *ngFor="let quote of quotes; let i = index"
+    >
       <div class="header">
         <p>{{ quote.authorName }}</p>
-        <p><span>xdays</span></p>
+        <p><span>{{quote.createdOn}}</span></p>
       </div>
       <hr />
       <div class="detail">
-        <p>{{ quote.quote }}
-        </p>
+        <p>{{ quote.quote }}</p>
       </div>
       <hr />
       <div class="btn-group">
-        <button type="submit" class="btn-submit btn-info">Like</button>
-        <button type="submit" class="btn-submit btn-danger">Dislike</button>
+        <a class="btn-vote up-vote"
+          ><i class="material-icons">thumb_up</i></a
+        >
+        <a class="btn-vote down-vote"
+          ><i class="material-icons">thumb_down</i></a
+        >
       </div>
     </div>
   </div>
