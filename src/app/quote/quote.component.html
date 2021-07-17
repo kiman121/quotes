@@ -1,10 +1,10 @@
 <div class="container">
   <div class="main-wrapper">
     <div class="form-group">
-      <button type="button" class="btn-submit btn-info">Add quote</button>
+      <button (click)="toggleDisplayQuoteForm()" type="button" class="btn-submit btn-info">Add quote</button>
     </div>
-    <div class="add-quote-section">
-      <app-quote-form></app-quote-form>
+    <div *ngIf="hideAddQuoteForm" class="add-quote-section">
+      <app-quote-form (addQuote) = "addNewQuote($event)"></app-quote-form>
     </div>
     <div class="quote-detail-section" *ngFor="let quote of quotes; let i = index">
       <div class="header">

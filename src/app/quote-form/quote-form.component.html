@@ -1,14 +1,39 @@
-<form>
+<form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
   <h4>Add Quoute</h4>
   <div class="form-group">
     <label for="">Author name</label>
-    <input type="text" class="form-control" placeholder="" />
+    <input
+      id="authorName"
+      type="text"
+      class="form-control"
+      placeholder=""
+      [(ngModel)]="newQuote.authorName"
+      name="authorName"
+      #authorName="ngModel"
+      required
+    />
   </div>
   <div class="form-group">
     <label for="">Quote</label>
-    <textarea rows="4" class="form-control"></textarea>
+    <textarea
+      id="quote"
+      rows="4"
+      class="form-control"
+      [(ngModel)]="newQuote.quote"
+      name="quote"
+      #quote="ngModel"
+    ></textarea>
   </div>
   <div class="form-group">
-    <button type="submit" class="btn-submit btn-info">Save</button>
+    <button type="submit" class="btn-submit btn-info" (click)="hideAddQuoteBtn.emit()">Save</button>
   </div>
 </form>
+<!-- <input
+        type="date"
+        id="complete"
+        class="form-control"
+        [(ngModel)]="newGoal.completeDate"
+        name="completeDate"
+        #completeDate="ngModel"
+        required
+      /> -->
