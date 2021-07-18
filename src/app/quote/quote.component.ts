@@ -17,7 +17,7 @@ export class QuoteComponent implements OnInit {
       1,
       'Jane Mutwiri Makena',
       'When it comes to our favorite horror movies or books, the things that stay with us the most are the scary quotes that are said by the evil characters (or spirits!). Those sayings can be so creepy and so frightening that just the thought of someone saying them out loud is enough to send shivers down your spine. But if you are the one who likes to do the haunting, or you are just looking for some inspiration for your Halloween Instagram caption, you are going to want to read every single scary quote on our list. Most of these famous phrases are short but chilling. However, depending on your sense of humor, you may also find a few of them funny (although we do not think the person you are saying them to will think that!). The motifs you will find here are fear, danger, and more. You will also see references to vampires, ghosts and witches as well',
-      new Date(2020, 3, 14),0,0
+      new Date(2020, 3, 14),0,2
     ),
     new Quote(
       2,
@@ -41,7 +41,13 @@ export class QuoteComponent implements OnInit {
 
     this.hideAddQuoteForm = !this.hideAddQuoteForm;
   }
-
+  vote(voteType, index){
+    if(voteType === "up-vote"){ 
+      this.quotes[index].upVote = this.quotes[index].upVote+1;
+    } else if(voteType==="down-vote"){ 
+      this.quotes[index].downVote = this.quotes[index].downVote+1;
+    }
+  }
   alertUser(){
     window.alert('Time to hide the button!');
   }
