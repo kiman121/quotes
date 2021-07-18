@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'timeAgo',
 })
 export class TimeAgoPipe implements PipeTransform {
-  transform(value: any): number {
+  transform(value: any): any {
     // transform(value: any): number {
     //   let today: Date = new Date(); //get current date and time
     //   let todayWithNoTime: any = new Date(
@@ -37,7 +37,7 @@ export class TimeAgoPipe implements PipeTransform {
       value.getDate()
     )
 
-    var dateDifference = Math.abs(todayWithNoTime-startDate);
+    var dateDifference = Math.abs(todayWithNoTime-value);
     
     // var seconds = Math.floor((Date.now()-value) * 0.001)
     // const secondsInDay = 86400;
@@ -73,7 +73,7 @@ export class TimeAgoPipe implements PipeTransform {
   // }
     // startDate.setMinutes(startDate.getMinutes()-startDate.getTimezoneOffset());
 
-    return seconds;
+    return value;
     // return (Math.round((today.getTime()-value.getTime())*0.001)) +'====='+seconds;
   }
 }
