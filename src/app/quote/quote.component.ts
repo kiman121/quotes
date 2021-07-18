@@ -25,6 +25,12 @@ export class QuoteComponent implements OnInit {
       'Tell your closest friends that they play significant roles in your life with one of these heartwarming messages. Whether you need a caption for an Instagram post of the two of you having fun together, inspiration for what to write in a card for your bestie or just want to send a quick text that will brighten her day, read on for some of the best friendship messages out there. For more heartwarming messages, be sure to explore our favorite family quotes, love quotes and happy quotes!',
       new Date(2019, 6, 9)
     ),
+    new Quote(
+      2,
+      'Damaris Katuo Musili',
+      "The golden rule for every businessman is this: Put yourself in your customer's place.",
+      new Date(2021, 7, 17)
+    ),
   ];
 
   addNewQuote(quote) {
