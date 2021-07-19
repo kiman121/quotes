@@ -1,13 +1,11 @@
-import { ChangeDetectorRef, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'timeAgo',
 })
 export class TimeAgoPipe implements PipeTransform {
   transform(value: any): any {
-    setInterval(function () {
-      
-    }, 1000);
+    setInterval(function () {}, 1000);
 
     let currentDate: Date = new Date();
 
@@ -28,7 +26,7 @@ export class TimeAgoPipe implements PipeTransform {
         if (seconds > 1) {
           plural = 's';
         }
-        return seconds + ' second' + plural + 'ago';
+        return seconds + ' second' + plural + ' ago';
       }
     } else if (minutes <= 60) {
       if (minutes > 1) {

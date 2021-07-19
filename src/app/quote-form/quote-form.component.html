@@ -14,6 +14,19 @@
     />
   </div>
   <div class="form-group">
+    <label for="">Creted by</label>
+    <input
+      id="postedBy"
+      type="text"
+      class="form-control"
+      placeholder=""
+      [(ngModel)]="newQuote.postedBy"
+      name="postedBy"
+      #creapostedBytedBy="ngModel"
+      required
+    />
+  </div>
+  <div class="form-group">
     <label for="">Quote</label>
     <textarea
       id="quote"

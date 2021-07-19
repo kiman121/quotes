@@ -2,6 +2,7 @@ export class Quote {
   constructor(
     public id: number,
     public authorName: string,
+    public postedBy: string,
     public quote: string,
     public createdOn: Date,
     public upVote: number,

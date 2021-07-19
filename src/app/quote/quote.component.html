@@ -18,7 +18,8 @@
       [ngClass] = "{ 'popular-quote': quote.status}"
     >
       <div class="header" >
-        <p>{{ quote.authorName }}</p>
+        <p>Author name: {{ quote.authorName }}</p>
+        <p>Posted by: {{ quote.postedBy }}</p>
         <p>
           <span>{{ quote.createdOn | timeAgo }}</span>
         </p>

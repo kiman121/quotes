@@ -40,5 +40,5 @@ If you want to contact us, email us on info@quotes.com
 
 ### License
 
-[MIT licence](https://github.com/kiman121/dooh-mtaani/blob/master/LICENCE)
+[MIT licence](https://choosealicense.com/licenses/mit/)
 Copyright (c) 2021 **Quote inc**
