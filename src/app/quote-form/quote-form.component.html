@@ -12,6 +12,9 @@
       #authorName="ngModel"
       required
     />
+    <div [hidden]="authorName.valid || authorName.pristine" class="alert alert-danger">
+      <p>Field is required</p>
+    </div>
   </div>
   <div class="form-group">
     <label for="">Creted by</label>
@@ -22,9 +25,12 @@
       placeholder=""
       [(ngModel)]="newQuote.postedBy"
       name="postedBy"
-      #creapostedBytedBy="ngModel"
+      #postedBy="ngModel"
       required
     />
+    <div [hidden]="postedBy.valid || postedBy.pristine" class="alert alert-danger">
+      <p>Field is required</p>
+    </div>
   </div>
   <div class="form-group">
     <label for="">Quote</label>
@@ -36,6 +42,9 @@
       name="quote"
       #quote="ngModel"
     ></textarea>
+    <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+      <p>Field is required</p>
+    </div>
   </div>
   <div class="form-group">
     <button type="submit" class="btn-submit btn-info">Save</button>
