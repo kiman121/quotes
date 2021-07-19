@@ -1,27 +1,44 @@
-# Quotes
+# Quotes Web Application
+#### A quotes app where interested users may either add quotes or vote on posted quotes.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+#### By **Patrick Mwangangi**
+## Description
+This application was created to serve as a platform where interested users can post quotes and possibly vote on them. A tally of votes cast is maintained and the leading quote (in terms of up-votes) is highlighted and infered to be the favourite.
 
-## Development server
+Further to the above usage, this master piece was created as practice on concepts learnt in Angular (at Moringa School).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+It was created using [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
 
-## Code scaffolding
+## Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Here is a working live demo:
+https://kiman121.github.io/quotes/
 
-## Build
+## Setup/Installaction Requirements
+- Clone the repository (repo).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+git clone https://github.com/kiman121/quotes.git
+```
 
-## Running unit tests
+- Open the project on VS Code or any editor of choice.
+- Open the project on live server (ng serve -o).
+## Known Bugs
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+No Known bugs
 
-## Running end-to-end tests
+## Technologies Used
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- angular
+## Support and contact details
 
-## Further help
+If you want to contact us, email us on info@quotes.com
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### License
+
+[MIT licence](https://github.com/kiman121/dooh-mtaani/blob/master/LICENCE)
+Copyright (c) 2021 **Quote inc**
