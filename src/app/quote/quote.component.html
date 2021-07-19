@@ -15,10 +15,13 @@
     <div
       class="quote-detail-section"
       *ngFor="let quote of quotes; let i = index"
+      [ngClass] = "{ 'popular-quote': quote.status}"
     >
-      <div class="header">
+      <div class="header" >
         <p>{{ quote.authorName }}</p>
-        <p><span>{{quote.createdOn|timeAgo}}</span></p>
+        <p>
+          <span>{{ quote.createdOn | timeAgo }}</span>
+        </p>
       </div>
       <hr />
       <div class="detail">
@@ -26,11 +29,13 @@
       </div>
       <hr />
       <div class="btn-group">
-        <a class="btn-vote up-vote"
-          (click)="vote('up-vote', i)"><i class="material-icons">thumb_up</i><span>{{quote.upVote}}</span></a
+        <a class="btn-vote up-vote" (click)="vote('up-vote', i)"
+          ><i class="material-icons">thumb_up</i
+          ><span>{{ quote.upVote }}</span></a
         >
-        <a class="btn-vote down-vote"
-        (click)="vote('down-vote', i)"><i class="material-icons">thumb_down</i><span>{{quote.downVote}}</span></a
+        <a class="btn-vote down-vote" (click)="vote('down-vote', i)"
+          ><i class="material-icons">thumb_down</i
+          ><span>{{ quote.downVote }}</span></a
         >
       </div>
     </div>
