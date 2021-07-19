@@ -36,7 +36,7 @@ export class QuoteComponent implements OnInit {
       3,
       'Damaris Katuo Musili',
       "The golden rule for every businessman is this: Put yourself in your customer's place.",
-      new Date(2021, 7, 17),
+      new Date(2021, 6, 18),
       0,
       0
     ),
@@ -50,6 +50,7 @@ export class QuoteComponent implements OnInit {
 
     this.hideAddQuoteForm = !this.hideAddQuoteForm;
   }
+  
   vote(voteType, index) {
     if (voteType === 'up-vote') {
       this.quotes[index].upVote = this.quotes[index].upVote + 1;

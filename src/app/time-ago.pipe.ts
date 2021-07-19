@@ -1,79 +1,60 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { ChangeDetectorRef, Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'timeAgo',
 })
 export class TimeAgoPipe implements PipeTransform {
   transform(value: any): any {
-    // transform(value: any): number {
-    //   let today: Date = new Date(); //get current date and time
-    //   let todayWithNoTime: any = new Date(
-    //     today.getFullYear(),
-    //     today.getMonth(),
-    //     today.getDate()
-    //   );
+    setInterval(function () {
+      
+    }, 1000);
 
-    //   var dateDifference = Math.abs(value - todayWithNoTime); //return value in miliseconds
-    //   const secondsInDay = 86400; //60 seconds * 60 minutes in an hour * 24 hours in a day
-    //   var dateDifferenceSeconds = dateDifference * 0.001; //Converts miliseconds to senconds
-    //   var dateCounter = dateDifferenceSeconds / secondsInDay;
+    let currentDate: Date = new Date();
 
-    //   if (dateCounter >= 1 && value > todayWithNoTime) {
-    //     return dateCounter;
-    //   } else {
-    //     return 0;
-    //   }
-    // }
-    let today: Date = new Date();
-    let todayWithNoTime: any = new Date(
-      today.getFullYear(),
-      today.getMonth(),
-      today.getDate()
-    );
+    let currentDateTime: any = new Date(currentDate.getTime());
 
-    let startDate: any = new Date(
-      value.getFullYear(),
-      value.getMonth()-1,
-      value.getDate()
-    )
+    var seconds = Math.floor(Math.abs(currentDateTime - value) * 0.001),
+      minutes = Math.floor(seconds / 60),
+      hours = Math.floor(seconds / 3600),
+      months = Math.floor(seconds / 2600640),
+      days = Math.floor(seconds / 86400),
+      years = Math.floor(seconds / 31104000);
+    let plural: string = '';
 
-    var dateDifference = Math.abs(todayWithNoTime-value);
-    
-    // var seconds = Math.floor((Date.now()-value) * 0.001)
-    // const secondsInDay = 86400;
-    // // var seconds = Math.round(dateDifference * 0.001);
-    // var seconds = Math.round((today.getTime()-startDate.getTime())*0.001);
-    var seconds = dateDifference * 0.001;
-    var minutes = Math.round(seconds / 60);
-    var hours = Math.round(seconds / 3600);
-    var days = Math.round(seconds/(1000*60*60*24));
-    var months = Math.round(seconds / 2600640);
-    // var dateCounter = seconds / secondsInDay;
-
-    // if (seconds <= 60) {
-    //   if (seconds == 0) {
-    //     return 'now';
-    //   } else {
-    //     return seconds + 's ago';
-    //   }
-    // } else if (minutes <= 60) {
-    //   return minutes + 'm ago';
-    // } else if (hours> 1 && hours <= 24) {
-    //   return hours + 'h ago';
-    // } else if(days <= 30){
-    //   return days + 'd ago';
-    // }
-    // else if (months <= 24) {
-    // }
-
-  //   function treatAsUTC(date) {
-  //     var result = new Date(date);
-  //     result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
-  //     return result;
-  // }
-    // startDate.setMinutes(startDate.getMinutes()-startDate.getTimezoneOffset());
-
-    return value;
-    // return (Math.round((today.getTime()-value.getTime())*0.001)) +'====='+seconds;
+    if (seconds <= 60) {
+      if (seconds == 0) {
+        return 'posted now';
+      } else {
+        if (seconds > 1) {
+          plural = 's';
+        }
+        return seconds + ' second' + plural + 'ago';
+      }
+    } else if (minutes <= 60) {
+      if (minutes > 1) {
+        plural = 's';
+      }
+      return minutes + ' minute' + plural + ' ago';
+    } else if (hours <= 24) {
+      if (hours > 1) {
+        plural = 's';
+      }
+      return hours + ' hour' + plural + ' ago';
+    } else if (days <= 30) {
+      if (days > 1) {
+        plural = 's';
+      }
+      return days + ' day' + plural + ' ago';
+    } else if (months <= 12 && months > 0) {
+      if (months > 1) {
+        plural = 's';
+      }
+      return months + ' month' + plural + ' ago)';
+    } else {
+      if (years > 1) {
+        plural = 's';
+      }
+      return years + ' year' + plural + ' ago';
+    }
   }
 }
