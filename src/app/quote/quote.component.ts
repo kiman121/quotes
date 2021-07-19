@@ -62,6 +62,10 @@ export class QuoteComponent implements OnInit {
     }
     this.favoriteQuote();
   }
+
+  deleteQuote(index){
+    this.quotes.splice(index, 1);
+  }
   alertUser() {
     window.alert('Time to hide the button!');
   }
