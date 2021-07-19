@@ -42,7 +42,8 @@ a {
 .btn-vote i.material-icons {
   color: white;
 }
-.btn-vote {
+.btn-vote,
+.btn-delete {
   cursor: pointer;
   padding: 0.125em 0.75em;
   border-radius: 4px;
@@ -60,6 +61,13 @@ a {
 }
 .down-vote {
   background-color: #cb4848;
+}
+.btn-delete i.material-icons{
+  color: white;
+}
+.btn-delete{
+  background-color: #cb4848;
+  margin-left: 0.75em;
 }
 .popular-quote{
   border: 3px solid #cb4848;
